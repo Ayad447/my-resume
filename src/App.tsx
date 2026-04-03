@@ -53,7 +53,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <motion.a href="#" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
           className="text-xl font-bold tracking-tight text-white font-mono">
-          SA<span className="text-[#00e5a0]">_</span>
+          Syed Ayad Ali<span className="text-[#00e5a0]">_</span>
         </motion.a>
 
         <div className="hidden md:flex items-center gap-1">
@@ -102,7 +102,6 @@ const Hero = () => {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const brands = ['Amazon', 'General Motors', 'Microsoft', 'Lilly', 'DARPA', 'CMS'];
 
   return (
     <section ref={ref} id="about" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#0a0a0f]">
@@ -146,15 +145,6 @@ const Hero = () => {
                 <Mail size={16} /> Email
               </a>
             </motion.div>
-
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
-              <p className="text-xs text-slate-600 font-bold uppercase tracking-widest mb-4">Trusted by</p>
-              <div className="flex flex-wrap gap-6">
-                {brands.map((b) => (
-                  <span key={b} className="text-sm font-bold text-slate-600 hover:text-slate-400 transition-colors">{b}</span>
-                ))}
-              </div>
-            </motion.div>
           </div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
@@ -162,8 +152,8 @@ const Hero = () => {
             {[
               { value: '100+', label: 'Projects Delivered', icon: Rocket },
               { value: '$1.2M+', label: 'Contracts Managed', icon: TrendingUp },
-              { value: '50+', label: 'Fortune 500 Clients', icon: Users },
-              { value: '10%', label: 'Revenue Impact', icon: BarChart3 },
+              { value: '85%', label: 'Logo Retention 2025', icon: Users },
+              { value: '87%', label: 'Booking Retention 2025', icon: BarChart3 },
             ].map(({ value, label, icon: Icon }, i) => (
               <motion.div key={label} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 + i * 0.1 }}
                 className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 min-w-[200px] hover:border-[#00e5a0]/20 hover:bg-[#00e5a0]/[0.02] transition-all group">
@@ -184,6 +174,64 @@ const Hero = () => {
     </section>
   );
 };
+
+// ─── Trusted Brands ───────────────────────────────────────────────
+const TrustedBrands = () => {
+  const getLogoPath = (filename: string) => `${import.meta.env.BASE_URL}Logos/${filename}`;
+
+  const brands = [
+    { name: 'Amazon', logo: getLogoPath('Amazon.png') },
+    { name: 'General Motors', logo: getLogoPath('GeneralMotors.png') },
+    { name: 'UMGC', logo: getLogoPath('UMGC.png') },
+    { name: 'Lilly', logo: getLogoPath('Lilly.png') },
+    { name: 'DARPA', logo: getLogoPath('darpa.png') },
+    { name: 'UAG', logo: getLogoPath('UAG.png') },
+    { name: 'InvestMidwest', logo: getLogoPath('investmidwest.png') },
+    { name: 'CTF', logo: getLogoPath('ctf.png') },
+    { name: 'CNIB', logo: getLogoPath('cnib.png') },
+    { name: 'Maxwell', logo: getLogoPath('maxwell.png') },
+    { name: 'stride', logo: getLogoPath('stride.png') },
+    { name: 'NationalUrbanLeague', logo: getLogoPath('nationalurbanleague.png') },
+    { name: 'HSS', logo: getLogoPath('hss.png') },
+    { name: 'Devry', logo: getLogoPath('devry.png') },
+    { name: 'CMS', logo: getLogoPath('CMS.png') }
+  ];
+
+  return (
+    <section className="py-20 bg-[#080810] overflow-hidden w-full relative">
+      {/* Optional: A subtle section heading */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto px-6 mb-12 text-center"
+      >
+        <span className="text-xs font-bold text-[#00e5a0] uppercase tracking-widest">Trusted By</span>
+        <h2 className="text-3xl md:text-4xl font-black text-white mt-3">Industry Leaders & Partners</h2>
+      </motion.div>
+
+      {/* Full width scrolling area */}
+      <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+        <motion.div
+          className="flex items-center gap-20 w-max px-10"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ ease: "linear", duration: 50, repeat: Infinity }}
+        >
+          {[...brands, ...brands, ...brands, ...brands].map((brand, i) => (
+            <img
+              key={i}
+              src={brand.logo}
+              alt={`${brand.name} logo`}
+              title={brand.name}
+              className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+            />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 
 // ─── Case Study Modal ─────────────────────────────────────────────
 const CaseStudyModal = ({ project, onClose }: { project: any; onClose: () => void }) => {
@@ -359,20 +407,30 @@ const VideoTestimonials = () => (
         <h2 className="text-4xl md:text-5xl font-black text-white mt-3">Client Testimonials</h2>
         <p className="text-slate-500 mt-4">Real feedback from real clients — watch what they have to say.</p>
       </motion.div>
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-8">
         {RESUME_DATA.videoTestimonials.map((video, i) => (
           <motion.div key={i} initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="aspect-video rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-[#00e5a0]/20 transition-all">
-            <iframe src={video.url} title={video.title} className="w-full h-full"
-              allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
+            className="group flex flex-col gap-4">
+
+            {/* Video Container */}
+            <div className="aspect-video rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02] group-hover:border-[#00e5a0]/40 transition-all shadow-lg shadow-black/20">
+              <iframe src={video.url} title={video.title} className="w-full h-full"
+                allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
+            </div>
+
+            {/* Title Below Video */}
+            <div className="px-2">
+              <h3 className="text-lg font-bold text-white group-hover:text-[#00e5a0] transition-colors">{video.title}</h3>
+              <p className="text-xs text-slate-500 uppercase tracking-widest mt-1">Client Testimonial</p>
+            </div>
+
           </motion.div>
         ))}
       </div>
     </div>
   </section>
 );
-
 
 // ─── Skill Bar ────────────────────────────────────────────────────
 const SkillBar = ({ name, level }: { name: string; level: string }) => {
@@ -626,6 +684,7 @@ export default function App() {
         <Projects />
         <Experience />
         <Skills />
+        <TrustedBrands />
         <VideoTestimonials />
         <G2Reviews />
         <Contact />

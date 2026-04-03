@@ -7,7 +7,7 @@ export const RESUME_DATA: ResumeData & {
   g2Reviews: G2Review[]
 } = {
   name: "Syed Ayad Ali",
-  title: "Regional Project Head - US East",
+  title: "Regional Project Head - US East - vFairs",
   profilePhoto: "https://vepimg.b8cdn.com/uploads/vjfnew/1000002326/content/files/17752301501725301259706-jpg1775230150.jpg",
   summary: "Experienced Senior Project Manager gifted at meeting tight deadlines, driving business opportunities and working well in team-based environments. Engaging and personable to manage key milestones and deliver exemplary customer service.",
   contact: {
@@ -85,7 +85,7 @@ export const RESUME_DATA: ResumeData & {
   experience: [
     // ... existing experience
     {
-      title: "Regional Project Head - US East",
+      title: "Regional Project Head - US East - vFairs",
       company: "vFairs",
       period: "Feb 2024 - Present",
       description: [
@@ -93,7 +93,8 @@ export const RESUME_DATA: ResumeData & {
         "Handling the top 10% of clients located in the US East, ensuring their needs are met.",
         "Tasked with the training and advancement of team members.",
         "Focused on boosting renewal rates by providing clients and project managers with optimal tools to enhance customer experience.",
-        "Fostered a collaborative environment, promoting teamwork and knowledge sharing among team members."
+        "Fostered a collaborative environment, promoting teamwork and knowledge sharing among team members.",
+        "Maintained 85% logo retention and 87% booking retention in 2025"
       ]
     },
     {
