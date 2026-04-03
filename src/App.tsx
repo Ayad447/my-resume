@@ -177,7 +177,7 @@ const Hero = () => {
 
 // ─── Trusted Brands ───────────────────────────────────────────────
 const TrustedBrands = () => {
-  const getLogoPath = (filename: string) => `${import.meta.env.BASE_URL}Logos/${filename}`;
+  const getLogoPath = (filename: string) => `${import.meta.env.BASE_URL}logos/${filename}`;
 
   const brands = [
     { name: 'Amazon', logo: getLogoPath('Amazon.png') },
