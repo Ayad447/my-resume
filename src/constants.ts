@@ -57,27 +57,27 @@ export const RESUME_DATA: ResumeData & {
     }
   ],
   videoTestimonials: [
-    { url: "https://player.vimeo.com/video/875484591", title: "Client Testimonial 1" },
-    { url: "https://player.vimeo.com/video/1145909200", title: "Client Testimonial 2" },
-    { url: "https://player.vimeo.com/video/1117793916", title: "Client Testimonial 3" },
-    { url: "https://player.vimeo.com/video/841793777", title: "Client Testimonial 4" }
+    { url: "https://player.vimeo.com/video/875484591", title: "Girls Who Code" },
+    { url: "https://player.vimeo.com/video/1145909200", title: "Unversity of Maryland Global Campus" },
+    { url: "https://player.vimeo.com/video/1117793916", title: "Children Tumor Foundation" },
+    { url: "https://player.vimeo.com/video/841793777", title: "University of Massachusetts" }
   ],
   g2Reviews: [
     {
       url: "https://www.g2.com/products/vfairs/reviews/vfairs-review-7718181",
-      author: "Verified User",
+      author: "Brigade Events",
       rating: 5,
       snippet: "Syed was extremely responsive to our multitude of live updates throughout the span of our multi day event. There was no way we could have pushed out the number of individual messages and push notifications without him."
     },
     {
       url: "https://www.g2.com/products/vfairs/reviews/vfairs-review-8734629",
-      author: "Event Manager",
+      author: "General Motors",
       rating: 5,
       snippet: "Syed Ayad Ali is the best part of vFairs. He is attentive, professional, and fantastic with follow up."
     },
     {
       url: "https://www.g2.com/products/vfairs/reviews/vfairs-review-10052896",
-      author: "Director of Marketing",
+      author: "Hospital for Special Surgery",
       rating: 5,
       snippet: "It has been a fantastic experience working with Syed's team to develop a customized platform for event management and registration, supporting both our front-end and back-end needs, including the implementation of integrations with other software. "
     }

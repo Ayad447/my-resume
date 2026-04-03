@@ -318,6 +318,7 @@ const Experience = () => {
             ))}
           </div>
 
+
           <AnimatePresence mode="wait">
             <motion.div key={activeIndex} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
@@ -423,6 +424,7 @@ const Skills = () => (
               </motion.div>
             ))}
           </div>
+
         </div>
 
         <div>
@@ -436,23 +438,24 @@ const Skills = () => (
             ))}
           </div>
 
-          <div className="mt-10 space-y-4">
-            <p className="text-xs font-bold text-slate-600 uppercase tracking-widest mb-6">Education</p>
-            {RESUME_DATA.education.map((edu, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4 bg-white/[0.02] border border-white/[0.06] rounded-xl p-5 hover:border-[#00e5a0]/20 transition-all group">
-                <div className="w-10 h-10 rounded-xl bg-[#00e5a0]/10 flex items-center justify-center text-[#00e5a0] shrink-0 group-hover:bg-[#00e5a0] group-hover:text-[#0a0a0f] transition-all">
-                  <GraduationCap size={18} />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-[#00e5a0] mb-1">{edu.period}</p>
-                  <p className="font-bold text-white text-sm">{edu.degree}</p>
-                  <p className="text-sm text-slate-500">{edu.institution}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+
+        </div>
+        <div className="mt-10 space-y-4">
+          <p className="text-xs font-bold text-slate-600 uppercase tracking-widest mb-6">Education</p>
+          {RESUME_DATA.education.map((edu, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+              className="flex items-start gap-4 bg-white/[0.02] border border-white/[0.06] rounded-xl p-5 hover:border-[#00e5a0]/20 transition-all group">
+              <div className="w-10 h-10 rounded-xl bg-[#00e5a0]/10 flex items-center justify-center text-[#00e5a0] shrink-0 group-hover:bg-[#00e5a0] group-hover:text-[#0a0a0f] transition-all">
+                <GraduationCap size={18} />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-[#00e5a0] mb-1">{edu.period}</p>
+                <p className="font-bold text-white text-sm">{edu.degree}</p>
+                <p className="text-sm text-slate-500">{edu.institution}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
